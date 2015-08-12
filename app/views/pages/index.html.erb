@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing All Pages</h1>
+
+<div>
+  <% @pages.each do |page| %>
+      <div><%= link_to page.to_s, page_path(page) %></div>
+  <% end %>
+</div>

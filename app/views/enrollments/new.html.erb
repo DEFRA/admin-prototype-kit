@@ -1,0 +1,6 @@
+<%= form_for(@enrollment) do |form| %>
+    <%= render 'enrollments/states/unregistered', form: form %>
+
+    <%= form.submit "Continue", class:'button' %>
+
+<% end %>
