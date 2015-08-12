@@ -20,9 +20,6 @@ Drop .html.erb pages into app/views/pages
 
 Fork or clone the project locally
 
-
-## Installation
-
 cd into the project and install dependencies as usual :
  
 ```ruby
@@ -56,14 +53,20 @@ rake db:reset
 ## Layout
 
 As well as static pages, you can use content_for hooks to inject content into 
-in the GDS template. See the README for details  of the available content blocks
+in the GDS template. See the README for details of available content blocks
 here : https://github.com/alphagov/govuk_admin_template
  
  e.g
  
 ```ruby
 <% content_for ::navbar_right do %>
-    <div>Some text for over there
+    <div>Some text for over there</div>
+<% end %>
+
+<% content_for :navbar_items do %>
+  <li>
+    <a href="#">navbar_item</a>
+  </li>
 <% end %>
 ```
 
