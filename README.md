@@ -1,5 +1,7 @@
 # Admin prototyping kit
 
+[![Build Status](https://travis-ci.org/EnvironmentAgency/admin-prototype-kit.svg)](https://travis-ci.org/EnvironmentAgency/admin-prototype-kit)
+
 Rails 4.2 example application that provides GDS Admin layout, with basic
 admin functionality to enable fast prototyping of backend views
 
