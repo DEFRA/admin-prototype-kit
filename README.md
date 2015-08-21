@@ -1,5 +1,4 @@
-# Prototyping
-
+# Admin prototyping kit
 
 Rails 4.2 example application that provides GDS Admin layout, with basic
 admin functionality to enable fast prototyping of backend views
@@ -22,13 +21,13 @@ Fork or clone the project locally
 
 cd into the project and install dependencies as usual :
 
-```ruby
+```bash
 bundle install
 ```
 
 Now run standard rails commands to get the DB setup and you're good to go.
 
-```ruby
+```bash
 rake db:migrate
 rake db:seed
 ```
