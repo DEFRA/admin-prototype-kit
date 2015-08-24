@@ -13,7 +13,6 @@
 <% content_for :navbar_right do %>
     <div><%= link_to "Site Map", pages_index_path %></div>
 <% end %>
-```
 
 <!-- Call GDS Main Layout - this is a nested template so prior to this call-->
 <!-- we can populate any of the hooks (e.g page_title)  with our data-->
@@ -21,4 +20,3 @@
 <!-- https://github.com/alphagov/govuk_admin_template -->
 
 <%= render :template => 'layouts/govuk_admin_template' %>
-
