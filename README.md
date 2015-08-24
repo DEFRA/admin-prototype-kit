@@ -33,6 +33,16 @@ rake db:migrate
 rake db:seed
 ```
 
+## Start the service
+
+To start the service locally simply run;
+
+```bash
+./startup.sh
+```
+
+You can then access it at http://localhost:3001
+
 ## Basic Configuration
 
 ###  Seed data
