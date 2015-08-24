@@ -9,9 +9,8 @@
     <%= Rails.application.config.prototype.site_title %>
 <% end %>
 
-
 <% content_for :navbar_right do %>
-    <div><%= link_to "Site Map", pages_index_path %></div>
+    <div><%= link_to "Site Map", proto_pages_path('index') %></div>
 <% end %>
 
 <!-- Call GDS Main Layout - this is a nested template so prior to this call-->
