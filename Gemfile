@@ -32,7 +32,7 @@ group :development, :test do
   gem 'byebug'
 end
 
-# DST SPECIFICS
+# Prototype Kit Specifics
 
 # Provided by thoughtbot - Rails engine for static pages.
 # https://github.com/thoughtbot/high_voltage
