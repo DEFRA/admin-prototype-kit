@@ -6,8 +6,14 @@ describe User do
 
   it { should respond_to(:email) }
 
-  it "#email returns a string" do
+  it '#email returns a string' do
     expect(@user.email).to match 'user@example.com'
+  end
+
+  it { should respond_to(:role) }
+
+  it "#role returns 'user' by default" do
+    expect(@user.role).to match :user
   end
 
 end
