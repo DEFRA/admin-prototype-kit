@@ -1,19 +1,17 @@
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
-         :recoverable, :rememberable, :trackable, :validatable
+class User
+  include ActiveModel::Model
 
-  enum role: [:user, :customer, :business, :admin]
+  ROLES = %i(
+    user
+    customer
+    business
+    admin
+  )
 
-  after_initialize :set_default_role, :if => :new_record?
+  attr_accessor :name, :email, :password, :role
 
-  def set_default_role
-    self.role ||= :user
+  def initialize(attributes = {})
+    super
+    self.role ||= ROLES.find { |v| v == :user }
   end
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
-         :recoverable, :rememberable, :trackable, :validatable
 end
