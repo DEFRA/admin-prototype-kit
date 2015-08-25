@@ -17,8 +17,6 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'pundit'
-
 # DST SPECIFICS
 
 # Provided by thoughtbot - Rails engine for static pages.
@@ -28,7 +26,6 @@ gem 'govuk_admin_template', '1.0.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
 
 group :development do
   gem 'better_errors'
@@ -44,14 +41,14 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do
-  # This is a prototyping kit - please review this section
-  # if/when you wish to productionize your prototype
-end
-
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  # This is a prototyping kit - please review this section
+  # if/when you wish to productionize your prototype
 end
