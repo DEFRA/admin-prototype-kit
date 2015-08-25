@@ -59,6 +59,5 @@ group :test do
 end
 
 group :production do
-  # This is a prototyping kit - please review this section
-  # if/when you wish to productionize your prototype
+  # This prototyping kit is not intended for production
 end
