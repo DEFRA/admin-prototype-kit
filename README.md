@@ -2,19 +2,11 @@
 
 [![Build Status](https://travis-ci.org/EnvironmentAgency/admin-prototype-kit.svg)](https://travis-ci.org/EnvironmentAgency/admin-prototype-kit)
 
-Rails 4.2 example application that provides GDS Admin layout, with basic
-admin functionality to enable fast prototyping of backend views
+Based on a stripped down Rails 4.2 application, this kit provides a way to create high-res prototypes based on the [GOV.UK admin template](https://github.com/alphagov/govuk_admin_template) that users can interact with, as quickly and simply as possible.
 
-Includes :
+## Use in production
 
-- [GOV.UK admin template](https://github.com/alphagov/govuk_admin_template)
-
-- [Devise](https://github.com/plataformatec/devise) (user management)
-- [Bootstrap](http://getbootstrap.com)
-
-Use this application to prototype static views (pages).
-
-Drop `.html.erb` pages into app/views/pages.
+In a word, **don't**. This kit has been designed for prototyping, not production code. Take only the lessons learned and your designs into a production system.
 
 ## Installation
 
@@ -26,13 +18,6 @@ Fork or clone the project locally
 bundle install
 ```
 
-Now run standard rails commands to get the DB setup and you're good to go.
-
-```bash
-rake db:migrate
-rake db:seed
-```
-
 ## Start the service
 
 To start the service locally simply run;
@@ -42,24 +27,6 @@ To start the service locally simply run;
 ```
 
 You can then access it at http://localhost:3001
-
-## Basic Configuration
-
-###  Seed data
-
-Run ```rake db:seed``` to populate Db with some sample Users.
-
-To change or add to the sample set, edit.
-
-```bash
-db/seeds.rb
-```
-
-To truncate and reseed the DB.
-
-```bash
-rake db:reset
-```
 
 ## Layout
 
