@@ -1,0 +1,85 @@
+<h1>Read record example</h1>
+
+<p>In this example will show how you can use the kit to mock displaying a record
+  retrieved from a database.</p>
+
+<p>The kit includes a way of creating and using mock data that will live as long
+  as it is running. We're going to grab one of those mock records and display
+  its contents here.</p>
+
+<h2>Creating the model</h2>
+
+<p>The first step to creating your own mock records is to define a
+  <strong>model</strong> for the entity you want to create. You can think of a
+  model as the thing that defines the data you wish to hold for the
+  entity. They are actually a key part of most modern web frameworks and can do
+  much more than that <em>(any developer reading this will be screaming at the
+  screen right now!)</em> but that explanation will suffice.</p>
+
+<p>You can see an example of one in <code>app/models/customer.rb</code>.</p>
+
+<pre>class Customer
+  include ActiveModel::Model
+
+  attr_accessor :name, :contact_no
+
+end</pre>
+
+<p>If for example we wanted to mock a <code>contact_address</code> record, we
+  would create a new file; <code>app/models/contact_address.rb</code> and add
+  the following to it.</p>
+
+<pre>class ContactAddress
+  include ActiveModel::Model
+
+  attr_accessor :line1, :line2, :line3, :city, :postcode
+
+end</pre>
+
+<p>As you can see what we call our <code>class</code> defines what the entity is
+  and what fields we list against <code>attr_accessor</code> define the data
+  that will be held.</p>
+
+<h2>Generating mock data</h2>
+
+<p>Mock data for the kit is generated in
+  <code>config/initializers/dummy_data.rb</code>. For each mock dataset you'll
+  find a generate and/or return method. The customers one looks like this:</p>
+<pre>def self.customers
+  @@customers ||= [
+    Customer.new(name: 'Joe Bloggs', contact_no: '07878 123456'),
+    Customer.new(name: 'Jane Doe', contact_no: '0117 987 6543'),
+    Customer.new(name: 'Uma Leggerts', contact_no: '0208 765 4321')
+  ]
+  @@customers
+end</pre>
+<p>It's the most code we've seen so far, but its actually quite simple and we'll
+  go through the key bits now. <code>@@customers</code> holds your list of
+  mock customer records. Think of it as representing a table of customers in a
+  database, it will exist for the as long as the kit is running.</p>
+<p><code>Customer.new()</code> is the bit which creates the record using our
+  model. When creating the record we tell it what values to set for each of its
+  properties hence the bits like <code>name: 'Joe Bloggs'</code>. The fact each
+  of these calls is wrapped in square brackets <code>[]</code>, separated by a
+  ',' is what makes <code>@@customers</code> a list of customers.</p>
+<p>Finally the <code>||=</code> is the clever bit. When the method is called it
+  determines whether <code>@@customers</code> has been populated or not. If not
+  it calls the code on the right to create the records and populate
+  <code>@@customers</code> before returning it. If it is populated that code is
+  ignored and <code>@@customers</code> is simply returned.</p>
+
+<h2>Retrieving the record</h2>
+
+<p>In order to have data to read from we need to mock retrieving it from the
+  database. We do this using a before hook. This is essentially a method that
+  will be run before the page is displayed. Before hooks are placed in
+  <code>app/controllers/concerns/proto_pages_before_show</code>. This is an
+  example of retreiving a mock customer record.
+
+<pre>def before_customer
+  @customer = DummyData.customers[0]
+end</pre>
+
+
+
+<hr>
