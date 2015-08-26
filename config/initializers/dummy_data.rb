@@ -1,47 +1,25 @@
 module DummyData
 
-  def self.users
-    @@users ||= build_users
-  end
-
-  def self.customers
-    @@customers ||= build_customers
-  end
-
-  private
-
-  UserStruct = Struct.new(:name, :email, :role)
-
+  # USER
   def self.build_users
-    @@users = []
-
-    [
-      UserStruct.new('Alan Shanks', 'alan@example.org', :user),
-      UserStruct.new('Tom Cutter', 'tom@example.org', :user),
-      UserStruct.new('Polly Bones', 'polly@example.org', :user),
-      UserStruct.new('Admin', 'admin@example.org', :admin)
-    ].each do |s|
-      @@users << User.new(
-        name: s.name,
-        email: s.email,
-        password: 'password1234',
-        role: s.role)
-    end
-    @@users
+    @@users ||= [
+      User.new(name: 'Alan Shanks', email: 'alan@example.org',
+               password: 'password1234', role: :user),
+      User.new(name: 'Tom Cutter', email: 'tom@example.org',
+               password: 'password1234', role: :user),
+      User.new(name: 'Polly Bones', email: 'polly@example.org',
+               password: 'password1234', role: :user),
+      User.new(name: 'Admin', email: 'admin@example.org',
+               password: 'password1234', role: :admin)
+    ]
   end
 
-  CustStruct = Struct.new(:name)
-
-  def self.build_customers
-    @@customers = []
-
-    [
-      CustStruct.new('Joe Bloggs'),
-      CustStruct.new('Jane Doe'),
-      CustStruct.new('Uma Leggerts')
-    ].each do |s|
-      @@customers << Customer.new(name: s.name)
-    end
-    @@customers
+  # CUSTOMER
+  def self.customers
+    @@customers ||= [
+      Customer.new(name: 'Joe Bloggs', contact_no: '07878 123456'),
+      Customer.new(name: 'Jane Doe', contact_no: '0117 987 6543'),
+      Customer.new(name: 'Uma Leggerts', contact_no: '0208 765 4321')
+    ]
   end
 end
