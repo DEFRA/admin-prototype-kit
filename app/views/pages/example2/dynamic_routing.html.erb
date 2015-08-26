@@ -1,0 +1,55 @@
+<%= link_to('Home', proto_pages_path('home')) %>
+
+<h1>Dynamic routing example</h1>
+
+<p>The intention of this example is to demonstrate how you can use what a user
+  selects to determine what happens next. In this particular case we will show
+  the user a different page based on their selection. You can use the
+  same principle in your prototypes to better reflect how the actual system will
+  behave.</p>
+<p>First you add a page to the <code>app/views/pages</code> folder. In this case
+  we first created a folder called <code>example2</code> then our page
+  <code>dynamic_routing</code>.</p>
+<p>Then we need to add an after hook. This is essentially a bit of code that
+  will be called once the form in the page has been submitted. It needs to go in
+  the <code>app/controllers/concerns/proto_pages_after_update.rb</code> file.
+  You can use the existing hooks as a base for yours. The critical thing is that
+  the name of the hook (method) should match the full name of your page. For
+  example <code>example2/dynamic_routing.html.erb</code> would translate as:</p>
+
+  <pre>def after_example2_dynamic_routing
+end</pre>
+
+<p>You can put whatever logic you like in the method, but in our case we check
+  the value of <code>options</code> and based on whether it equals
+  <code>static</code> or not we set where to go next. The full method looks like
+  this:
+  <pre>def after_example2_dynamic_routing(params)
+  if params['options'] == 'static'
+    params[:redirect_to] = proto_pages_path('example1/static')
+  else
+    params[:redirect_to] = proto_pages_path('home')
+  end
+end
+</pre>
+
+<p><code>params[:redirect_to]</code> is an important value. The code that calls
+  this hook will always check to see if <code>params</code> contains a value for
+  <code>:redirect_to</code>. If it does it will attempt to redirect the user to
+  that page, else it will send the user back to the submitting page.</p>
+
+<p><strong>So in summary</strong>, you just need to add a new page and a single
+  method to get a dynamic page up and running.</p>
+
+<hr>
+<h2>What page would you like to see next?</h2>
+<div>
+<%= form_tag(proto_pages_path('example2/dynamic_routing')) do |f| %>
+  <div><%= radio_button_tag(:options, 'static') %>
+  <%= label_tag(:options_static, 'Example 1 (static page)') %></div>
+  <div><%= radio_button_tag(:options, 'home') %>
+  <%= label_tag(:options_home, 'Home') %></div>
+
+  <%= submit_tag('Next') %>
+<% end %>
+</div>

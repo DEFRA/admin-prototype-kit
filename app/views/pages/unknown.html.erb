@@ -1,0 +1,13 @@
+<% if @page.blank? %>
+  <% @page = 'foo' if @page.blank? %>
+  <div><em>You are seeing me because you came directly to the <strong>unknown</strong> page. Therefore <strong>foo</strong> is simply an example.</em></div>
+  <hr>
+<% end %>
+
+<h1>'<%= @page %>' is unknown</h1>
+
+<p>You are seeing this page because a call was made to the page <strong><%= @page %></strong>, however it is unknown.</p>
+
+<p>The most likely cause is that the view <code>app/views/pages/<%= @page %>.html.erb</code> doesn't exist.</p>
+
+<p>If the page name is correct add the missing view, else a likely cause for the problem is a call to <code>proto_pages_path('<%= @page %>')</code> somewhere in your code.</p>
