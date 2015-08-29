@@ -71,15 +71,43 @@ end</pre>
 <h2>Retrieving the record</h2>
 
 <p>In order to have data to read from we need to mock retrieving it from the
-  database. We do this using a before hook. This is essentially a method that
+  database. We do this in a before hook. This is essentially a method that
   will be run before the page is displayed. Before hooks are placed in
   <code>app/controllers/concerns/proto_pages_before_show</code>. This is an
-  example of retreiving a mock customer record.
+  example of retreiving a mock customer record.</p>
 
-<pre>def before_customer
+<pre>def before_example3_read_record
   @customer = DummyData.customers[0]
 end</pre>
 
+<p>Another key bit here. Both <code>@@customers</code> and
+  <code>@customer</code> are known in programming as variables. This basically
+  means they hold a value, which can be changed at anytime. The number of <code>@</code> symbols determines the scope of the variable i.e. how long it
+  will stick around for. Two <code>@</code> symbols means its around for as long
+  as the kit is running. In this case one <code>@</code> means its around long
+  enough that the page will see it. No <code>@</code> symbols means its only
+  exists in the method i.e. the time it takes to get from <code>def</code> to <code>end</code>!</p>
 
+<h2>Displaying the record</h2>
 
-<hr>
+<p>Now the last bit. Having defined our data structure (model), generated some
+  dummy data in <code>config/initializers/dummy_data.rb</code>, and retrived it
+  in <code>app/controllers/concerns/proto_pages_before_show</code> its time to
+  display it on the page.</p>
+
+<div>
+  <span><strong>Name:</strong></span> <span><%= @customer.name %></span>
+</div>
+<div>
+  <span><strong>Contact no:</strong></span> <span><%= @customer.contact_no %></span>
+</div>
+<br>
+
+<p>Check out <code>app/views/example3/read_record.erb.html</code> to see the
+  code.</p>
+
+<p>Here we've mixed markup and code. The code bits are wrapped in
+  <code><%= %></code> tags. You may also see <code><% %></code>. The big
+  difference is that the first set mean output to the page the result of my
+  code. The second set is generally used when we are trying to decide what to
+  output.</p>
