@@ -15,4 +15,27 @@ module ProtoPagesAfterUpdate
       params[:redirect_to] = proto_pages_path('home')
     end
   end
+
+  def after_example4_forms(params)
+    # Look in the terminal window you started the kit in to see logger output
+    Rails.logger.debug "after_example4_forms: Received the following params. #{params}"
+
+    # We determine which type of form was submitted by checking the params for
+    # the existance of a particular form field. If we don't match the ones
+    # used in the standard and FormTagHelper, we can assume submit for the
+    # FormTagHelper was clicked.
+    if params[:std_cust_name]
+      form_type = 'standard'
+    elsif params[:tag_cust_name]
+      form_type = 'tag'
+    else
+      form_type = 'helper'
+
+      # As we're dealing with a record from our 'dummy' database we can also
+      # pretend to save the change.
+      DummyData.customers[0].name = params[:customer][:name]
+    end
+
+    Rails.logger.debug "after_example4_forms: User submitted the '#{form_type}' type of form."
+  end
 end

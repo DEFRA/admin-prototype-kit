@@ -14,4 +14,8 @@ module ProtoPagesBeforeShow
   def before_example3_read_record
     @customer = DummyData.customers[0]
   end
+
+  def before_example4_forms
+    @customer = DummyData.customers[0]
+  end
 end

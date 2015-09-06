@@ -1,0 +1,37 @@
+<h1>Form options example</h1>
+
+<p>This example will show the 3 different options you have for creating forms
+  in pages. Look at <code>app/views/pages/example4/forms.html.erb</code> to
+  see the code being used to generate the forms in this page.</p>
+
+<h2>Standard html</h2>
+
+<p>You are free to use standard html markup for generating your forms.</p>
+
+<form autocomplete="off" id="standard_form" action="/pages/example4/forms" accept-charset="UTF-8" method="post">
+  <label for="std_cust_name">Name</label>
+  <input type="text" value="Joe Bloggs" name="std_cust_name" id="std_cust_name">
+  <input type="submit" name="commit" value="Create customer">
+</form>
+
+<h2>FormTagHelper</h2>
+
+<p>The second method is to use Rails <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html">FormTagHelper</a>. This essentially provides a number of methods for creating form tags.</p>
+
+<div>
+<%= form_tag(proto_pages_path('example4/forms')) do |f| %>
+  <%= label_tag(:tag_cust_name, 'Name') %>
+  <%= text_field_tag('tag_cust_name', 'Joe Bloggs') %>
+  <%= submit_tag('Create customer') %>
+<% end %>
+</div>
+
+<h2>FormHelper</h2>
+
+<p>The last method is to use Rails <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html">FormHelper</a>. This is normally used where you have a record and wish to 'bind' it to the form in the page. Binding just means that when the record is displayed the app knows that the customer's name goes in the name field, for example, and when submitted this value should be saved back into the name field of the record. If you were working with a record as in the <%= link_to('Read record', proto_pages_path('example3/read_record')) %> example, you could easily bind it to the form using FormHelper.</p>
+
+<%= form_for(@customer, :url => proto_pages_path('example4/forms')) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
