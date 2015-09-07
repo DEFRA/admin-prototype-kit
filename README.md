@@ -28,6 +28,17 @@ To start the service locally simply run;
 
 You can then access it at http://localhost:3001
 
+## Examples
+
+We have included examples on how to add new pages to the kit, and how to use the underlying Rails engine to add additional functionality. Both the example and the how to instructions are part of the kit. Links to the examples can be found on the home page.
+
+Currently the examples cover the following;
+
+- [Static pages](https://github.com/EnvironmentAgency/admin-prototype-kit/blob/master/app/views/pages/example1/static.html.erb)
+- [Dynamic routing](https://github.com/EnvironmentAgency/admin-prototype-kit/blob/master/app/views/pages/example2/dynamic_routing.html.erb)
+- [Read records](https://github.com/EnvironmentAgency/admin-prototype-kit/blob/master/app/views/pages/example3/read_record.html.erb)
+- [Form options](https://github.com/EnvironmentAgency/admin-prototype-kit/blob/master/app/views/pages/example4/forms.html.erb)
+
 ## Layout
 
 As well as static pages, you can use content_for hooks to inject content into in the GDS template.
