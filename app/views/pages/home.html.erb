@@ -1,5 +1,16 @@
-<h1>Admin Prototype Kit Home Page</h1>
+<h1>Welcome to the Admin prototyping kit</h1>
 
-<p>
-  Start adding your Rails views (pages) under  <b>app/views/pages</b>
-</p>
+<p>This is the <code>home.html.erb</code> page - we recommend you put links to
+  key pages here.</p>
+
+<h2>Examples</h2>
+
+<p>The following examples cover how you can add pages, and use the underlying
+  Rails engine to add functionality to your prototype.</p>
+
+<ul>
+  <li><%= link_to('Static content', proto_pages_path('example1/static')) %></li>
+  <li><%= link_to('Dynamic routing', proto_pages_path('example2/dynamic_routing')) %></li>
+  <li><%= link_to('Read record', proto_pages_path('example3/read_record')) %></li>
+  <li><%= link_to('Form options', proto_pages_path('example4/forms')) %></li>
+</ul>
