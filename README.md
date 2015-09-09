@@ -57,26 +57,6 @@ It must be named `ACCESS_KEY` and contain a value, however the value can be what
 
 Having set the key you should then give it to only those users permitted to access the site. In order to supply it they should use a URL like this **mysite.co.uk?access_key=let-me-in** when first accessing the site. As long as it matches the kit will then create a permanent cookie with the key value in, so any subsequent requests and visits to the site will no longer need the argument specified.
 
-## Layout
-
-As well as static pages, you can use content_for hooks to inject content into in the GDS template.
-
-For example:
-
-```HTML+ERB
-<% content_for :navbar_right do %>
-   <div>Some text for over there</div>
-<% end %>
-
-<% content_for :navbar_items do %>
- <li>
-   <a href="#">navbar_item</a>
- </li>
-<% end %>
-```
-
-See the [GOV.UK admin template README](https://github.com/alphagov/govuk_admin_template) for details of available content blocks.
-
 ## Contributing to this project
 
 If you have an idea you'd like to contribute please log an issue.
