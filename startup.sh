@@ -2,6 +2,6 @@
 bundle
 echo "#################################"
 echo ""
-echo "Navigate to http://localhost:3001 to see the home page"
+echo "Navigate to http://0.0.0.0:3001 to see the home page"
 echo ""
-bundle exec rails s -p 3001
+bundle exec rails s -b 0.0.0.0 -p 3001
