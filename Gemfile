@@ -16,8 +16,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -50,12 +48,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'launchy'
-  gem 'selenium-webdriver'
 end
 
 group :production do
