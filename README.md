@@ -8,25 +8,87 @@ Based on a stripped down Rails 4.2 application, this kit provides a way to creat
 
 In a word, **don't**. This kit has been designed for prototyping, not production code. Take only the lessons learned and your designs into a production system.
 
-## Installation
+## Versions
 
-Fork or clone the project locally
+The project is currently using Ruby version 2.2.2 and Rails 4.2.0.
 
-`cd` into the project and install dependencies as usual.
+## Obtain the source
+
+You'll need [git](https://git-scm.com/) to work with the source code. Once you have it clone the repository:
+
+```bash
+git clone https://github.com/EnvironmentAgency/admin-prototype-kit.git
+```
+
+This will copy the project into a new directory called **admin-prototype-kit** created in the folder you ran the command from. We refer to this as the *working directory*.
+
+Drop into the working directory using `cd admin-prototype-kit` before attempting any of the steps below.
+
+## Installation *(local)*
+
+You will need to ensure you have version 2.2.2 of Ruby available, and we would suggest you manage your ruby installations with a tool like [rvm](https://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).
+
+### Application gems *(local)*
+
+You will then also need to install the [bundler](http://bundler.io/) gem.
+
+```bash
+gem install bundler
+```
+
+When it finishes install the application gems using:
 
 ```bash
 bundle install
 ```
 
-## Start the service
+### Start the service *(local)*
 
 To start the service locally simply run;
 
 ```bash
-./startup.sh
+. bin/startup.sh
 ```
 
-You can then access it at http://localhost:3001
+You can then access it at http://0.0.0.0:3001
+
+### Stop the service *(local)*
+
+To stop the service use ```ctrl+c```
+
+## Installation *(vagrant)*
+
+If the above instructions are new to you, or you would prefer to just be given a ready made environment then you can make use of the fact we have enabled [Vagrant](https://www.vagrantup.com/) in the project.
+
+Vagrant is a tool that enables quick and simple setup of development environments, generally using virtual machines (though other containers are also supported). The simplest way to get up and running is to first install [VirtualBox](https://www.virtualbox.org/), then install Vagrant.
+
+Back in the working directory run the following command:
+
+```bash
+vagrant up
+```
+
+This will take awhile the first time it runs as it needs to build the virtual machine from scratch. Once done it will remain running in the background. You can access the machine using ```vagrant ssh``` if you need to.
+
+### Start the service *(vagrant)*
+
+To start both the vagrant box and the service simply run;
+
+```bash
+. bin/vagrant_startup.sh
+```
+
+You can then access it at http://0.0.0.0:3001
+
+### Stop the service *(vagrant)*
+
+To stop the service use ```vagrant halt```
+
+## Working with the code
+
+Irrespective of whether you installed it locally or are using the Vagrant box, you will work with the code in the same way.
+
+Edit the code using your preferred editor. Generally changes to any files in the [app/](https://github.com/EnvironmentAgency/admin-prototype-kit/tree/master/app) won't require you to restart rails, but any changes in [config/](https://github.com/EnvironmentAgency/admin-prototype-kit/tree/master/config) will. (If you are working with any of the other folders we assume you know what you are doing :smiley:!)
 
 ## Examples
 
