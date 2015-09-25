@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # We run bundle each time to ensure you have everything you need to run the app.
 bundle install --quiet
 echo "#################################"
