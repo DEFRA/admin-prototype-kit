@@ -10,7 +10,7 @@ In a word, **don't**. This kit has been designed for prototyping, not production
 
 ## Versions
 
-The project is currently using Ruby version 2.2.2 and Rails 4.2.0.
+The project is currently using Ruby version 2.2.2 and Rails 4.2.
 
 ## Obtain the source
 
