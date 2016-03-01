@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.5.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -35,7 +35,7 @@ end
 # Provided by thoughtbot - Rails engine for static pages.
 # https://github.com/thoughtbot/high_voltage
 gem 'high_voltage', '~>2.4.0'
-gem 'govuk_admin_template', '1.0.0'
+gem 'govuk_admin_template', '~> 4.1'
 
 group :development do
   gem 'better_errors'
