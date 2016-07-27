@@ -53,3 +53,4 @@ end
 group :production do
   # This prototyping kit is not intended for production
 end
+gem 'nokogiri', '>= 1.6.8'
