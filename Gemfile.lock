@@ -37,7 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (6.6.0)
+    autoprefixer-rails (6.6.1)
       execjs
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -68,7 +68,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
-    faker (1.7.1)
+    faker (1.7.2)
       i18n (~> 0.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
