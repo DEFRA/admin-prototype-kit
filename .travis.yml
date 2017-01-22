@@ -1,13 +1,14 @@
+sudo: false
 language: ruby
-cache: bundler
 rvm:
-  - 2.2.2
+  - 2.2.3
 
-# Have this option to stop travis-ci building twice. Currently we have travis set to build both
-# PR's and pushes. However this means when we push to a PR we have to wait for Travis to finish
-# 2 builds. If we unticked 'pushes' when the PR was finally merged that would not be built. The
-# brute force approach would be to untick build PR's and just build all pushes. We instead have
-# gone with the approach outlined here http://stackoverflow.com/a/31882307
-branches:
-  only:
-    - master
+# Travis CI clones repositories to a depth of 50 commits, which is only really
+# useful if you are performing git operations.
+# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
+git:
+  depth: 3
+
+# enable Bundler caching
+# https://docs.travis-ci.com/user/languages/ruby#Caching-Bundler
+cache: bundler
