@@ -37,7 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (6.7.7.1)
+    autoprefixer-rails (6.7.7.2)
       execjs
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -67,8 +67,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.7.3)
       i18n (~> 0.5)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     govuk_admin_template (4.4.2)
       bootstrap-sass (= 3.3.5.1)
       jquery-rails (~> 4.1.1)
@@ -170,7 +170,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    uglifier (3.1.11)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
