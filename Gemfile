@@ -46,3 +46,4 @@ end
 group :production do
   # This prototyping kit is not intended for production
 end
+gem 'loofah', '>= 2.2.1'
