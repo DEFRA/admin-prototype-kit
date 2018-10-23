@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/DEFRA/admin-prototype-kit.svg)](https://travis-ci.org/DEFRA/admin-prototype-kit)
 [![security](https://hakiri.io/github/DEFRA/admin-prototype-kit/master.svg)](https://hakiri.io/github/DEFRA/admin-prototype-kit/master)
 
+> Note: The [GOVUK admin template](https://github.com/alphagov/govuk_admin_template) that this was supposed to provide a prototyping kit for has now been marked as deprecated and will not be getting any new updates. Hence work on this project has also now stopped. There will be no further changes and the project has now been archived.
+
 Based on a stripped down Rails 4.2 application, this kit provides a way to create high-res prototypes based on the [GOV.UK admin template](https://github.com/alphagov/govuk_admin_template) that users can interact with, as quickly and simply as possible.
 
 ## Use in production
