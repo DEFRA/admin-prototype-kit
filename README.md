@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/DEFRA/admin-prototype-kit.svg)](https://travis-ci.org/DEFRA/admin-prototype-kit)
 [![security](https://hakiri.io/github/DEFRA/admin-prototype-kit/master.svg)](https://hakiri.io/github/DEFRA/admin-prototype-kit/master)
-[![Dependency Status](https://dependencyci.com/github/DEFRA/admin-prototype-kit/badge)](https://dependencyci.com/github/DEFRA/admin-prototype-kit)
 
 Based on a stripped down Rails 4.2 application, this kit provides a way to create high-res prototypes based on the [GOV.UK admin template](https://github.com/alphagov/govuk_admin_template) that users can interact with, as quickly and simply as possible.
 
